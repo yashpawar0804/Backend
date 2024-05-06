@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    EditText fullNameEditText, mobileNoEditText, emailEditText, addressEditText;
+    EditText fullName, mobileNo, email, address;
     Button registerButton;
 
     DatabaseReference databaseReference;
@@ -28,14 +28,14 @@ public class RegistrationActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("users");
 
         // Initialize views
-        fullNameEditText = findViewById(R.id.full_name_edit_text);
-        mobileNoEditText = findViewById(R.id.mobile_no_edit_text);
-        emailEditText = findViewById(R.id.email_edit_text);
-        addressEditText = findViewById(R.id.address_edit_text);
-        registerButton = findViewById(R.id.register_button);
+        fullName = findViewById(R.id.full_name);
+        mobileNo = findViewById(R.id.mobile_no);
+        email = findViewById(R.id.email);
+        address = findViewById(R.id.address);
+        register = findViewById(R.id.register);
 
         // Handle register button click
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerUser();
@@ -44,10 +44,10 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void registerUser() {
-        String fullName = fullNameEditText.getText().toString().trim();
-        String mobileNo = mobileNoEditText.getText().toString().trim();
-        String email = emailEditText.getText().toString().trim();
-        String address = addressEditText.getText().toString().trim();
+        String fullName = fullName.getText().toString().trim();
+        String mobileNo = mobileNo.getText().toString().trim();
+        String email = email.getText().toString().trim();
+        String address = address.getText().toString().trim();
 
         // Check if any field is empty
         if (fullName.isEmpty() || mobileNo.isEmpty() || email.isEmpty() || address.isEmpty()) {
@@ -77,9 +77,9 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void clearFields() {
-        fullNameEditText.setText("");
-        mobileNoEditText.setText("");
-        emailEditText.setText("");
-        addressEditText.setText("");
+        fullName.setText("");
+        mobileNo.setText("");
+        email.setText("");
+        address.setText("");
     }
 }
