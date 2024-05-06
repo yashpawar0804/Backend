@@ -1,0 +1,37 @@
+package JDBCprograms;
+
+public class Qualification {
+    private String highestQualification;
+    private int year;
+    private int totalExperience;
+
+    public Qualification(String highestQualification, int year, int totalExperience) {
+        this.highestQualification = highestQualification;
+        this.year = year;
+        this.totalExperience = totalExperience;
+    }
+
+    public String getHighestQualification() {
+        return highestQualification;
+    }
+
+    public void setHighestQualification(String highestQualification) {
+        this.highestQualification = highestQualification;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getTotalExperience() {
+        return totalExperience;
+    }
+
+    public void setTotalExperience(int totalExperience) {
+        this.totalExperience = totalExperience;
+    }
+}
